@@ -1,4 +1,4 @@
-def get_human_age(cat_age: int, dog_age: int) -> list:
+def get_human_age(cat_age: int, dog_age: int) -> list[int, int]:
     """
     Convert cat and dog ages to human years.
 
@@ -19,6 +19,10 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
         get_human_age(24, 24) == [2, 2]
     """
     result = [0, 0]
+
+    if not isinstance(cat_age, int) or not isinstance(dog_age, int):
+        raise TypeError("Ages must be integers")
+
     if cat_age >= 15:
         cat_age -= 15
         result[0] += 1
